@@ -6,7 +6,7 @@ abstract class JayComponent extends StatelessWidget {
   String get name;
   String get description;
 
-  List<PreviewLayout> get previewLayouts => [PreviewLayouts.fit];
+  List<PreviewLayout> get previewLayouts => [PreviewLayout.fit()];
 
   const JayComponent({
     super.key,

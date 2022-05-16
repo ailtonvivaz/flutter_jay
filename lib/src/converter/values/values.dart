@@ -16,3 +16,8 @@ export 'text_decoration_style.dart';
 export 'text_overflow.dart';
 export 'text_width_basis.dart';
 export 'text_height_behavior.dart';
+export 'box_constraints.dart';
+export 'main_axis_alignment.dart';
+export 'main_axis_size.dart';
+export 'cross_axis_alignment.dart';
+export 'vertical_direction.dart';

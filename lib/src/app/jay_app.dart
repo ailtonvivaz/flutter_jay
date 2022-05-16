@@ -11,7 +11,19 @@ class JayApp extends MaterialApp {
     super.title = 'Jay App',
     required this.components,
   }) : super(
-          theme: ThemeData(primarySwatch: Colors.blue),
+          theme: ThemeData(
+            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+            // primarySwatch: Colors.teal,
+            brightness: Brightness.light,
+          ),
+          darkTheme: ThemeData(
+            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal,
+              brightness: Brightness.dark,
+            ),
+          ),
           home: JayPage(components: components),
         );
 }

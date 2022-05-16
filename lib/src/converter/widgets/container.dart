@@ -14,6 +14,7 @@ class ContainerWidgetConverter extends JayWidgetConverter<Container> {
       padding: jay.decodeValue(data['padding']),
       margin: jay.decodeValue(data['margin']),
       color: jay.decodeValue(data['color']),
+      constraints: jay.decodeValue(data['constraints']),
       child: jay.decodeWidget(data['child']),
     );
   }
@@ -25,6 +26,7 @@ class ContainerWidgetConverter extends JayWidgetConverter<Container> {
       'padding': jay.encodeValue<EdgeInsetsGeometry>(widget.padding),
       'margin': jay.encodeValue<EdgeInsetsGeometry>(widget.margin),
       'color': jay.encodeValue<Color>(widget.color),
+      'constraints': jay.encodeValue<BoxConstraints>(widget.constraints),
       'child': jay.encodeWidget(widget.child),
     };
   }

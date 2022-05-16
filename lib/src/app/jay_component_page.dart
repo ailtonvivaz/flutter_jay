@@ -24,22 +24,19 @@ class _JayComponentPageState extends State<JayComponentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.component.name),
+        title: Text('Component: ${widget.component.name}'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: ComponentPreview(widget.component),
-            ),
-            Expanded(
-              flex: 1,
-              child: ComponentCodePreview(widget.component),
-            ),
-          ],
-        ),
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: ComponentCodePreview(widget.component),
+          ),
+          Expanded(
+            flex: 1,
+            child: ComponentPreview(widget.component),
+          ),
+        ],
       ),
     );
   }

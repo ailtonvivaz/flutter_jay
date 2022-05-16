@@ -5,19 +5,14 @@ import 'package:jay/jay.dart';
 
 import '../../converter/jay_converter.dart';
 
-class ComponentCodePreview extends StatefulWidget {
+class ComponentCodePreview extends StatelessWidget {
   final JayComponent component;
 
-  const ComponentCodePreview(this.component, {super.key});
-
-  @override
-  State<ComponentCodePreview> createState() => _ComponentCodePreviewState();
-}
-
-class _ComponentCodePreviewState extends State<ComponentCodePreview> {
   final JayConverter converter = JayConverter();
 
-  ScrollController controller = ScrollController();
+  final ScrollController scrollController = ScrollController();
+
+  ComponentCodePreview(this.component, {super.key});
 
   String getPrettyJSONString(jsonObject) {
     var encoder = const JsonEncoder.withIndent("     ");
@@ -26,22 +21,34 @@ class _ComponentCodePreviewState extends State<ComponentCodePreview> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      controller: controller,
-      children: [
-        Center(child: Text(widget.component.description)),
-        Container(
-          padding: const EdgeInsets.all(16.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            color: Colors.grey[200],
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Text(
+            component.description,
+            style: const TextStyle(
+              fontSize: 14,
+            ),
           ),
-          child: Text(
-            getPrettyJSONString(
-                converter.encodeWidget(widget.component.createComponent())),
+          const SizedBox(height: 20),
+          Expanded(
+            child: Card(
+              child: ListView(
+                padding: const EdgeInsets.all(16.0),
+                controller: scrollController,
+                children: [
+                  SelectableText(
+                    getPrettyJSONString(
+                        converter.encodeWidget(component.createComponent())),
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

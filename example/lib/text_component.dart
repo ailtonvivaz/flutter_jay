@@ -12,9 +12,9 @@ class TextComponent extends JayComponent {
 
   @override
   List<PreviewLayout> get previewLayouts => [
-        PreviewLayouts.iphone13Pro.fitHeight(),
-        PreviewLayouts.iphoneSE.fitHeight(),
-        PreviewLayouts.fit,
+        PreviewLayout(size: PreviewSizes.iphone8),
+        PreviewLayout(size: PreviewSizes.iphone13Pro, fitHeight: true),
+        PreviewLayout(size: PreviewSizes.fit),
       ];
 
   const TextComponent({super.key});
@@ -27,6 +27,8 @@ class TextComponent extends JayComponent {
       margin: const EdgeInsets.all(16),
       color: Colors.greenAccent,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Center(
             child: Text(
@@ -39,7 +41,23 @@ class TextComponent extends JayComponent {
             ),
           ),
           const Divider(),
-          const Spacer(),
+          // Spacer(),
+          Row(
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.green,
+              ),
+              const Spacer(),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.red,
+              ),
+            ],
+          ),
+          // const Spacer(),
           Text(
             'esse texto nao tem alinhamento',
             style: TextStyle(
