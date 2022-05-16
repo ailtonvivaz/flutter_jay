@@ -28,6 +28,7 @@ class JayConverter implements JayEncoder, JayDecoder {
     ColumnWidgetConverter(),
     CenterWidgetConverter(),
     DividerWidgetConverter(),
+    SpacerWidgetConverter(),
   ];
 
   final List<JayValueConverter> _defaultValueConverters = [

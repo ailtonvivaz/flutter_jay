@@ -38,9 +38,8 @@ class TextComponent extends JayComponent {
               ),
             ),
           ),
-          const Divider(
-            color: Colors.yellow,
-          ),
+          const Divider(),
+          const Spacer(),
           Text(
             'esse texto nao tem alinhamento',
             style: TextStyle(
