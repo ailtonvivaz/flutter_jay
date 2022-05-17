@@ -6,3 +6,4 @@ export 'divider.dart';
 export 'spacer.dart';
 export 'row.dart';
 export 'stack.dart';
+export 'sized_box.dart';

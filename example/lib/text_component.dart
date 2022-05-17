@@ -67,6 +67,7 @@ class TextComponent extends JayComponent {
               ),
             ],
           ),
+          const SizedBox(height: 20),
           Stack(
             alignment: Alignment.center,
             children: [
@@ -87,7 +88,7 @@ class TextComponent extends JayComponent {
               ),
             ],
           ),
-          // const Spacer(),
+          const SizedBox(height: 20),
           Text(
             'esse texto nao tem alinhamento',
             style: TextStyle(
@@ -118,6 +119,7 @@ class TextComponent extends JayComponent {
               ]),
             ),
           ),
+          const SizedBox(height: 20),
           const Text(
             'alinhamento configurado para center',
             textAlign: TextAlign.center,
