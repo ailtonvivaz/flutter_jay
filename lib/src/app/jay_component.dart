@@ -2,18 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'preview_layout.dart';
 
-abstract class JayComponent extends StatelessWidget {
+abstract class JayComponent {
   String get name;
   String get description;
 
   List<PreviewLayout> get previewLayouts => [PreviewLayout.fit()];
 
-  const JayComponent({
-    super.key,
-  });
+  const JayComponent();
 
   Widget createComponent();
-
-  @override
-  Widget build(BuildContext context) => createComponent();
 }

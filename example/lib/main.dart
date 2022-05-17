@@ -1,4 +1,4 @@
-import 'package:example/text_component.dart';
+import 'package:example/sample_component.dart';
 import 'package:flutter/material.dart';
 import 'package:jay/jay.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return JayApp(
       components: const [
-        TextComponent(),
+        SampleComponent(),
       ],
     );
   }

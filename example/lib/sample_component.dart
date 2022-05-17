@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jay/jay.dart';
 
-class TextComponent extends JayComponent {
+class SampleComponent extends JayComponent {
   @override
-  String get name => 'Text';
+  String get name => 'Sample';
 
   @override
-  String get description => 'Widget de texto';
+  String get description => 'A sample component with supported widgets';
 
   @override
   List<PreviewLayout> get previewLayouts => [
@@ -27,12 +27,12 @@ class TextComponent extends JayComponent {
         ),
       ];
 
-  const TextComponent({super.key});
+  const SampleComponent();
 
   @override
   Widget createComponent() {
     return Container(
-      alignment: AlignmentDirectional.bottomEnd,
+      alignment: AlignmentDirectional.bottomCenter,
       padding: const EdgeInsets.all(16),
       margin: const EdgeInsets.all(16),
       color: Colors.greenAccent,
@@ -40,18 +40,16 @@ class TextComponent extends JayComponent {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Center(
-            child: Text(
-              'alinhamento configurado para end',
-              textAlign: TextAlign.end,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+          const Text(
+            'text with end alignment lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            textAlign: TextAlign.end,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
+            maxLines: 2,
           ),
           const Divider(),
-          // Spacer(),
           Row(
             children: [
               Container(
@@ -89,8 +87,17 @@ class TextComponent extends JayComponent {
             ],
           ),
           const SizedBox(height: 20),
+          Center(
+            child: Container(
+              width: 20,
+              height: 20,
+              color: Colors.yellow,
+            ),
+          ),
+          const SizedBox(height: 20),
           Text(
-            'esse texto nao tem alinhamento',
+            'text without alignment lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            maxLines: 2,
             style: TextStyle(
               color: Colors.blue,
               fontStyle: FontStyle.italic,
@@ -121,7 +128,7 @@ class TextComponent extends JayComponent {
           ),
           const SizedBox(height: 20),
           const Text(
-            'alinhamento configurado para center',
+            'text with center alignment lorem ipsum dolor sit amet, consectetur adipiscing elit',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,

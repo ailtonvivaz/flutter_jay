@@ -11,6 +11,7 @@ class JayApp extends MaterialApp {
     super.title = 'Jay App',
     required this.components,
   }) : super(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             useMaterial3: true,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
