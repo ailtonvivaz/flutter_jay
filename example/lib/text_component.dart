@@ -12,9 +12,19 @@ class TextComponent extends JayComponent {
 
   @override
   List<PreviewLayout> get previewLayouts => [
-        PreviewLayout(size: PreviewSizes.iphone8),
-        PreviewLayout(size: PreviewSizes.iphone13Pro, fitHeight: true),
-        PreviewLayout(size: PreviewSizes.fit),
+        PreviewLayout(
+          size: PreviewSizes.iphone8,
+          description: 'iPhone 8',
+        ),
+        PreviewLayout(
+          size: PreviewSizes.iphone13Pro,
+          fitHeight: true,
+          description: 'iPhone 13 Pro (Fit)',
+        ),
+        PreviewLayout(
+          size: PreviewSizes.fit,
+          description: 'Fit',
+        ),
       ];
 
   const TextComponent({super.key});
@@ -50,6 +60,26 @@ class TextComponent extends JayComponent {
                 color: Colors.green,
               ),
               const Spacer(),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.red,
+              ),
+            ],
+          ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.green,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+              ),
               Container(
                 width: 50,
                 height: 50,

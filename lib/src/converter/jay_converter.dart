@@ -30,6 +30,7 @@ class JayConverter implements JayEncoder, JayDecoder {
     DividerWidgetConverter(),
     SpacerWidgetConverter(),
     RowWidgetConverter(),
+    StackWidgetConverter(),
   ];
 
   final List<JayValueConverter> _defaultValueConverters = [
@@ -56,6 +57,8 @@ class JayConverter implements JayEncoder, JayDecoder {
     MainAxisSizeValueConverter(),
     CrossAxisAlignmentValueConverter(),
     VerticalDirectionValueConverter(),
+    StackFitValueConverter(),
+    ClipValueConverter(),
   ];
 
   JayConverter() {

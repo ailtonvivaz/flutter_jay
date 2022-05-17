@@ -21,3 +21,4 @@ export 'main_axis_alignment.dart';
 export 'main_axis_size.dart';
 export 'cross_axis_alignment.dart';
 export 'vertical_direction.dart';
+export 'stack_fit.dart';
