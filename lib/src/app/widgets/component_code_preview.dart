@@ -1,14 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:jay/jay.dart';
 
-import '../../converter/jay_converter.dart';
+import '../../../core.dart';
+import '../jay_component.dart';
 
 class ComponentCodePreview extends StatelessWidget {
   final JayComponent component;
-
-  final JayConverter converter = JayConverter();
 
   final ScrollController scrollController = ScrollController();
 
@@ -40,7 +38,7 @@ class ComponentCodePreview extends StatelessWidget {
                 children: [
                   SelectableText(
                     getPrettyJSONString(
-                        converter.encodeWidget(component.createComponent())),
+                        Jay.instance.encodeWidget(component.createComponent())),
                     style: const TextStyle(fontSize: 12),
                   ),
                 ],

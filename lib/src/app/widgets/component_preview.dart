@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../jay.dart';
-import '../../converter/jay_converter.dart';
+import '../../../core.dart';
+import '../jay_component.dart';
 
 class ComponentPreview extends StatelessWidget {
   final JayComponent component;
-
-  final JayConverter converter = JayConverter();
 
   final ScrollController scrollController = ScrollController();
 
@@ -14,8 +12,8 @@ class ComponentPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final encodedWidget = converter.encodeWidget(component.createComponent());
-    final Widget previewWidget = converter.decodeWidget(encodedWidget)!;
+    final Map<String, dynamic> encodedWidget =
+        Jay.instance.encodeWidget(component.createComponent());
 
     return ListView.separated(
       padding: const EdgeInsets.all(16.0),
@@ -47,7 +45,12 @@ class ComponentPreview extends StatelessWidget {
                   data: ThemeData(
                     brightness: previewLayout.brightness,
                   ),
-                  child: Material(child: previewWidget),
+                  child: JayViewer(
+                    data: encodedWidget,
+                    // errorBuilder: (_, error, __) {
+                    //   return Text(error.toString());
+                    // },
+                  ),
                 ),
               ),
             ),

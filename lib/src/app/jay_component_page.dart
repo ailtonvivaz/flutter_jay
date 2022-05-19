@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jay/src/app/widgets/component_code_preview.dart';
-import 'package:jay/src/app/widgets/component_preview.dart';
 
-import '../converter/jay_converter.dart';
 import 'jay_component.dart';
+import 'widgets/component_code_preview.dart';
+import 'widgets/component_preview.dart';
 
 class JayComponentPage extends StatefulWidget {
   final JayComponent component;
@@ -18,8 +17,6 @@ class JayComponentPage extends StatefulWidget {
 }
 
 class _JayComponentPageState extends State<JayComponentPage> {
-  final JayConverter converter = JayConverter();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

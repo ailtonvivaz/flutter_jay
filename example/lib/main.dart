@@ -1,5 +1,4 @@
 import 'package:example/sample_component.dart';
-import 'package:flutter/material.dart';
 import 'package:jay/jay.dart';
 
 void main() {

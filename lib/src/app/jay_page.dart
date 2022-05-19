@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jay/core.dart';
+import 'package:jay/src/plugins/flutter/flutter_jay_plugin.dart';
 
 import 'jay_component.dart';
 import 'jay_component_page.dart';
@@ -18,6 +20,7 @@ class JayPage extends StatefulWidget {
 class _JayPageState extends State<JayPage> {
   @override
   Widget build(BuildContext context) {
+    Jay.instance.registerPlugin(FlutterJayPlugin());
     return Scaffold(
       appBar: AppBar(
         title: const Text('Jay Page'),
